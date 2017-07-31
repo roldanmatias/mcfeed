@@ -2,6 +2,10 @@
 
 Simple, scrollable feed-like interface that displays articles from raw JSON data.
 
+## App Architecture
+
+### UI
+
 MCFeedTableViewController: Shows a list of articles using MVVM pattern.
 
 MCArticleCell: Article cell. Shows Image, Date, Title and Summary.
@@ -14,12 +18,17 @@ MCArticleDetailViewController: shows all article properties with a button to ope
 
 UIColor+Hex: UIColor extension to set color with hexa string.
 
+### Model
+
 Model: MCArticle, MCTopic, MCMedia, MCAttribution.
+
+### Domain
 
 Domain: MCFeedDomain (protocol), MCFeed (implementation), MCFeedRepository (protocol).
 
-Repository: MCFeedDataRepository (implementation), MCFeedAPIService (API requests), MCFeedCacheService (simple persistence class).
+### Repository
 
+Repository: MCFeedDataRepository (implementation), MCFeedAPIService (API requests), MCFeedCacheService (simple persistence class).
 
 ## Installation
 
