@@ -4,6 +4,8 @@ Simple, scrollable feed-like interface that displays articles from raw JSON data
 
 Features: Pull to refresh, mark articles already read changing image alpha, pods, blocks, delegates, async calls, custom transition, JSON to Object mapper, offline data, MVVM, scalable architecture. 
 
+Show transition animation only in device!
+
 ## App Architecture
 
 ### UI
