@@ -70,13 +70,17 @@ class MCFeedTableViewController: UITableViewController {
         
         let navViewController: UINavigationController = UINavigationController(rootViewController: articleDetailVC)
         
-        let cell: MCArticleCell = self.tableView.cellForRow(at: indexPath) as! MCArticleCell
-        let frameToOpenFrom = self.tableView.convert(cell.frame, to: self.tableView.superview)
         
-        transitionDelegate.openingFrame = frameToOpenFrom
+        if !Platform.isSimulator {
+            let cell: MCArticleCell = self.tableView.cellForRow(at: indexPath) as! MCArticleCell
+            let frameToOpenFrom = self.tableView.convert(cell.frame, to: self.tableView.superview)
+            
+            transitionDelegate.openingFrame = frameToOpenFrom
+            
+            navViewController.transitioningDelegate = transitionDelegate
+            navViewController.modalPresentationStyle = .custom
+        }
         
-        navViewController.transitioningDelegate = transitionDelegate
-        navViewController.modalPresentationStyle = .custom
         present(navViewController, animated: true, completion: nil)
     }
 
