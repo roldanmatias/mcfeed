@@ -9,8 +9,13 @@
 import UIKit
 import Kingfisher
 
+protocol MCArticleDetailViewControllerDelegate {
+    func articleDetailSwipe(direction: UISwipeGestureRecognizerDirection) -> MCArticle?
+}
+
 class MCArticleDetailViewController: UIViewController {
 
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var articleCreatedDate: UILabel!
     @IBOutlet weak var articleImage: UIImageView!
     @IBOutlet weak var articleSummary: UITextView!
@@ -25,40 +30,54 @@ class MCArticleDetailViewController: UIViewController {
     @IBOutlet weak var articleBodyHeight: NSLayoutConstraint!
     
     var article: MCArticle?
+    var delegate: MCArticleDetailViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setNavigationBarAppearace()
         
-        let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(MCArticleDetailViewController.backAction))
+        let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(MCArticleDetailViewController.swiped(_:)))
         swipeDown.direction = UISwipeGestureRecognizerDirection.down;
         self.view.addGestureRecognizer(swipeDown)
         
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(MCArticleDetailViewController.swiped(_:)))
+        swipeRight.direction = UISwipeGestureRecognizerDirection.right;
+        self.view.addGestureRecognizer(swipeRight)
+        
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(MCArticleDetailViewController.swiped(_:)))
+        swipeLeft.direction = UISwipeGestureRecognizerDirection.left;
+        self.view.addGestureRecognizer(swipeLeft)
+        
         if let article = self.article {
-            article.unread = false
-            self.articleTitle.text = article.title ?? ""
-            self.articleLikes.text = "\(article.likesCount ?? 0) Likes"
-            self.articleBody.text = ""
-            self.articleSlug.text = "Slug: \(article.slug ?? "")"
-            
-            if let attribution = article.attribution, let attributionName = attribution.displayName {
-                self.articleAttribution.text = "By \(attributionName)"
-            }else {
-                self.articleAttribution.text = ""
-            }
-            
-            self.articleCreatedDate.text = "Created at \(self.showDate(dateString: article.createdAt))"
-            self.articleDate.text = "Updated at \(self.showDate(dateString: article.updatedAt))"
-            
-            self.showMedia(article: article)
-            self.showTopics(article: article)
-            
-            if let body = article.body {
-                self.showBody(body: body)
-            }else {
-                self.loadBody(article: article)
-            }
+            loadArticle(article: article)
+        }
+    }
+    
+    func loadArticle(article: MCArticle) {
+        
+        article.unread = false
+        self.articleTitle.text = article.title ?? ""
+        self.articleLikes.text = "\(article.likesCount ?? 0) Likes"
+        self.articleBody.text = ""
+        self.articleSlug.text = "Slug: \(article.slug ?? "")"
+        
+        if let attribution = article.attribution, let attributionName = attribution.displayName {
+            self.articleAttribution.text = "By \(attributionName)"
+        }else {
+            self.articleAttribution.text = ""
+        }
+        
+        self.articleCreatedDate.text = "Created at \(self.showDate(dateString: article.createdAt))"
+        self.articleDate.text = "Updated at \(self.showDate(dateString: article.updatedAt))"
+        
+        self.showMedia(article: article)
+        self.showTopics(article: article)
+        
+        if let body = article.body {
+            self.showBody(body: body)
+        }else {
+            self.loadBody(article: article)
         }
     }
 
@@ -104,15 +123,15 @@ class MCArticleDetailViewController: UIViewController {
     
     func showMedia(article: MCArticle) {
         
+        self.articleImageHeight.constant = 0
+        
         if let media = article.media, media.count > 0{
             if let mediaImage = media.first(where:{($0.mimeType?.contains("image/")) ?? false}), let imageUrl = mediaImage.url, let url = URL(string: imageUrl) {
                 
+                self.articleImageHeight.constant = 220
+                
                 self.articleImage.kf.setImage(with: ImageResource(downloadURL: url), placeholder: UIImage(named: "logo"), options: nil, progressBlock: nil, completionHandler: nil)
-            }else {
-                self.articleImageHeight.constant = 0
             }
-        }else {
-            self.articleImageHeight.constant = 0
         }
     }
     
@@ -163,5 +182,34 @@ class MCArticleDetailViewController: UIViewController {
         if let article = self.article, let urlString = article.url, let url = URL(string: urlString) {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
+    }
+    
+    func swiped(_ gesture: UIGestureRecognizer) {
+        
+        if let swipeGesture = gesture as? UISwipeGestureRecognizer{
+            
+            if swipeGesture.direction == UISwipeGestureRecognizerDirection.right || swipeGesture.direction == UISwipeGestureRecognizerDirection.left {
+                    
+                if let newArticle = self.delegate?.articleDetailSwipe(direction: swipeGesture.direction) {
+                    
+                    self.article = newArticle
+                    loadArticle(article: newArticle)
+                    animateAlphaView()
+                    
+                }else {
+                    self.dismiss(animated: true, completion: nil)
+                }
+                
+            }else {
+                self.dismiss(animated: true, completion: nil)
+            }
+        }
+    }
+    
+    func animateAlphaView() {
+        self.scrollView.alpha = 0.0
+        UIView.animate(withDuration: 0.5, delay: 0.0, options: UIViewAnimationOptions.curveEaseOut, animations: {
+            self.scrollView.alpha = 1.0
+        }, completion: nil)
     }
 }

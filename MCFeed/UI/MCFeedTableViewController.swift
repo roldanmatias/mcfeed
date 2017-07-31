@@ -12,8 +12,9 @@ import QuartzCore
 class MCFeedTableViewController: UITableViewController {
 
     private let cellIdentifier = "cell"
-    private var articles: [MCArticle]?
     private let transitionDelegate: TransitioningDelegate = TransitioningDelegate()
+    var articles: [MCArticle]?
+    var articleIndexSelected = -1
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,7 +67,10 @@ class MCFeedTableViewController: UITableViewController {
     
         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let articleDetailVC = mainStoryboard.instantiateViewController(withIdentifier: "articleDetail") as! MCArticleDetailViewController
+        articleDetailVC.delegate = self
         articleDetailVC.article = self.articles?[indexPath.row]
+        
+        self.articleIndexSelected = indexPath.row
         
         let navViewController: UINavigationController = UINavigationController(rootViewController: articleDetailVC)
         
@@ -84,4 +88,24 @@ class MCFeedTableViewController: UITableViewController {
         present(navViewController, animated: true, completion: nil)
     }
 
+}
+
+extension MCFeedTableViewController: MCArticleDetailViewControllerDelegate {
+    
+    func articleDetailSwipe(direction: UISwipeGestureRecognizerDirection) -> MCArticle? {
+        
+        if direction == .right {
+            if self.articleIndexSelected > 0 {
+                self.articleIndexSelected -= 1
+                return self.articles?[self.articleIndexSelected]
+            }
+        }else if direction == .left {
+            if self.articleIndexSelected < (self.articles?.count ?? 0) - 1 {
+                self.articleIndexSelected += 1
+                return self.articles?[self.articleIndexSelected]
+            }
+        }
+        
+        return nil
+    }
 }
