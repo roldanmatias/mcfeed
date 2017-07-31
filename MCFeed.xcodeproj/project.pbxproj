@@ -1,0 +1,490 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6F783DBB97D6B64D35F0BC7F /* Pods_MCFeed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 700DF10AFB54BAD41AE3AC12 /* Pods_MCFeed.framework */; };
+		B990B2D51F2CEE3C003174CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B990B2D41F2CEE3C003174CB /* AppDelegate.swift */; };
+		B990B2DA1F2CEE3C003174CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B990B2D81F2CEE3C003174CB /* Main.storyboard */; };
+		B990B2DC1F2CEE3C003174CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B990B2DB1F2CEE3C003174CB /* Assets.xcassets */; };
+		B990B2DF1F2CEE3C003174CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B990B2DD1F2CEE3C003174CB /* LaunchScreen.storyboard */; };
+		B990B2FB1F2CF5E2003174CB /* MCFeedDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = B990B2FA1F2CF5E2003174CB /* MCFeedDomain.swift */; };
+		B990B2FE1F2CF5FC003174CB /* MCFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = B990B2FD1F2CF5FC003174CB /* MCFeed.swift */; };
+		B990B3011F2CF70C003174CB /* MCFeedRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B990B3001F2CF70C003174CB /* MCFeedRepository.swift */; };
+		B990B3041F2CF7AF003174CB /* MCFeedDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B990B3031F2CF7AF003174CB /* MCFeedDataRepository.swift */; };
+		B990B3071F2CFCD6003174CB /* MCFeedAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B990B3061F2CFCD5003174CB /* MCFeedAPIService.swift */; };
+		B990B30A1F2CFD01003174CB /* MCFeedPersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = B990B3091F2CFD01003174CB /* MCFeedPersistence.swift */; };
+		B990B30D1F2D11AC003174CB /* MCFeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B990B30C1F2D11AC003174CB /* MCFeedTableViewController.swift */; };
+		B990B3101F2D28B9003174CB /* MCArticle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B990B30F1F2D28B9003174CB /* MCArticle.swift */; };
+		B990B3131F2D28E9003174CB /* MCTopic.swift in Sources */ = {isa = PBXBuildFile; fileRef = B990B3121F2D28E9003174CB /* MCTopic.swift */; };
+		B990B3161F2D291C003174CB /* MCMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = B990B3151F2D291C003174CB /* MCMedia.swift */; };
+		B990B3191F2D294C003174CB /* MCAttribution.swift in Sources */ = {isa = PBXBuildFile; fileRef = B990B3181F2D294C003174CB /* MCAttribution.swift */; };
+		B990B31C1F2E2DF2003174CB /* MCArticleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B990B31B1F2E2DF2003174CB /* MCArticleCell.swift */; };
+		B990B31E1F2E3431003174CB /* MCArticleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B990B31D1F2E3431003174CB /* MCArticleViewModel.swift */; };
+		B990B3201F2EA599003174CB /* MCArticleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B990B31F1F2EA599003174CB /* MCArticleDetailViewController.swift */; };
+		B990B3241F2EB15C003174CB /* TransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B990B3231F2EB15C003174CB /* TransitioningDelegate.swift */; };
+		B990B3261F2EB19E003174CB /* PresentationAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B990B3251F2EB19E003174CB /* PresentationAnimator.swift */; };
+		B990B3281F2EB317003174CB /* DismissalAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B990B3271F2EB317003174CB /* DismissalAnimator.swift */; };
+		B990B32A1F2EC1CE003174CB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B990B3291F2EC1CE003174CB /* QuartzCore.framework */; };
+		B990B32C1F2ED232003174CB /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = B990B32B1F2ED232003174CB /* UIColor+Hex.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4E8F489C89B4F9CDEB50A93A /* Pods-MCFeed.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MCFeed.release.xcconfig"; path = "Pods/Target Support Files/Pods-MCFeed/Pods-MCFeed.release.xcconfig"; sourceTree = "<group>"; };
+		700DF10AFB54BAD41AE3AC12 /* Pods_MCFeed.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MCFeed.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B990B2D11F2CEE3C003174CB /* MCFeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MCFeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B990B2D41F2CEE3C003174CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B990B2D91F2CEE3C003174CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B990B2DB1F2CEE3C003174CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B990B2DE1F2CEE3C003174CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B990B2E01F2CEE3C003174CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B990B2FA1F2CF5E2003174CB /* MCFeedDomain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MCFeedDomain.swift; path = Domain/MCFeedDomain.swift; sourceTree = "<group>"; };
+		B990B2FD1F2CF5FC003174CB /* MCFeed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MCFeed.swift; path = Domain/MCFeed.swift; sourceTree = "<group>"; };
+		B990B3001F2CF70C003174CB /* MCFeedRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MCFeedRepository.swift; path = Domain/MCFeedRepository.swift; sourceTree = "<group>"; };
+		B990B3031F2CF7AF003174CB /* MCFeedDataRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MCFeedDataRepository.swift; path = Repository/MCFeedDataRepository.swift; sourceTree = "<group>"; };
+		B990B3061F2CFCD5003174CB /* MCFeedAPIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MCFeedAPIService.swift; path = Repository/MCFeedAPIService.swift; sourceTree = "<group>"; };
+		B990B3091F2CFD01003174CB /* MCFeedPersistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MCFeedPersistence.swift; path = Repository/MCFeedPersistence.swift; sourceTree = "<group>"; };
+		B990B30C1F2D11AC003174CB /* MCFeedTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MCFeedTableViewController.swift; path = UI/MCFeedTableViewController.swift; sourceTree = "<group>"; };
+		B990B30F1F2D28B9003174CB /* MCArticle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MCArticle.swift; path = Model/MCArticle.swift; sourceTree = "<group>"; };
+		B990B3121F2D28E9003174CB /* MCTopic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MCTopic.swift; path = Model/MCTopic.swift; sourceTree = "<group>"; };
+		B990B3151F2D291C003174CB /* MCMedia.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MCMedia.swift; path = Model/MCMedia.swift; sourceTree = "<group>"; };
+		B990B3181F2D294C003174CB /* MCAttribution.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MCAttribution.swift; path = Model/MCAttribution.swift; sourceTree = "<group>"; };
+		B990B31B1F2E2DF2003174CB /* MCArticleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MCArticleCell.swift; path = UI/MCArticleCell.swift; sourceTree = "<group>"; };
+		B990B31D1F2E3431003174CB /* MCArticleViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MCArticleViewModel.swift; path = UI/MCArticleViewModel.swift; sourceTree = "<group>"; };
+		B990B31F1F2EA599003174CB /* MCArticleDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MCArticleDetailViewController.swift; path = UI/MCArticleDetailViewController.swift; sourceTree = "<group>"; };
+		B990B3231F2EB15C003174CB /* TransitioningDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TransitioningDelegate.swift; path = UI/TransitioningDelegate.swift; sourceTree = "<group>"; };
+		B990B3251F2EB19E003174CB /* PresentationAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PresentationAnimator.swift; path = UI/PresentationAnimator.swift; sourceTree = "<group>"; };
+		B990B3271F2EB317003174CB /* DismissalAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DismissalAnimator.swift; path = UI/DismissalAnimator.swift; sourceTree = "<group>"; };
+		B990B3291F2EC1CE003174CB /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		B990B32B1F2ED232003174CB /* UIColor+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+Hex.swift"; path = "UI/UIColor+Hex.swift"; sourceTree = "<group>"; };
+		E149FD94E327B68D5407E6C6 /* Pods-MCFeed.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MCFeed.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MCFeed/Pods-MCFeed.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B990B2CE1F2CEE3C003174CB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B990B32A1F2EC1CE003174CB /* QuartzCore.framework in Frameworks */,
+				6F783DBB97D6B64D35F0BC7F /* Pods_MCFeed.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2A027178BA75BDE93091302E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B990B3291F2EC1CE003174CB /* QuartzCore.framework */,
+				700DF10AFB54BAD41AE3AC12 /* Pods_MCFeed.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		43F16505E0341D977486DCE6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E149FD94E327B68D5407E6C6 /* Pods-MCFeed.debug.xcconfig */,
+				4E8F489C89B4F9CDEB50A93A /* Pods-MCFeed.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B990B2C81F2CEE3C003174CB = {
+			isa = PBXGroup;
+			children = (
+				B990B2D31F2CEE3C003174CB /* MCFeed */,
+				B990B2D21F2CEE3C003174CB /* Products */,
+				43F16505E0341D977486DCE6 /* Pods */,
+				2A027178BA75BDE93091302E /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		B990B2D21F2CEE3C003174CB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B990B2D11F2CEE3C003174CB /* MCFeed.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B990B2D31F2CEE3C003174CB /* MCFeed */ = {
+			isa = PBXGroup;
+			children = (
+				B990B2F41F2CF0F8003174CB /* UI */,
+				B990B30E1F2D26D8003174CB /* Model */,
+				B990B2F51F2CF101003174CB /* Domain */,
+				B990B2F61F2CF10E003174CB /* Repository */,
+				B990B2D41F2CEE3C003174CB /* AppDelegate.swift */,
+				B990B2E01F2CEE3C003174CB /* Info.plist */,
+			);
+			path = MCFeed;
+			sourceTree = "<group>";
+		};
+		B990B2F41F2CF0F8003174CB /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				B990B2D81F2CEE3C003174CB /* Main.storyboard */,
+				B990B2DB1F2CEE3C003174CB /* Assets.xcassets */,
+				B990B2DD1F2CEE3C003174CB /* LaunchScreen.storyboard */,
+				B990B30C1F2D11AC003174CB /* MCFeedTableViewController.swift */,
+				B990B31F1F2EA599003174CB /* MCArticleDetailViewController.swift */,
+				B990B31B1F2E2DF2003174CB /* MCArticleCell.swift */,
+				B990B31D1F2E3431003174CB /* MCArticleViewModel.swift */,
+				B990B3231F2EB15C003174CB /* TransitioningDelegate.swift */,
+				B990B3251F2EB19E003174CB /* PresentationAnimator.swift */,
+				B990B3271F2EB317003174CB /* DismissalAnimator.swift */,
+				B990B32B1F2ED232003174CB /* UIColor+Hex.swift */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		B990B2F51F2CF101003174CB /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				B990B2FA1F2CF5E2003174CB /* MCFeedDomain.swift */,
+				B990B2FD1F2CF5FC003174CB /* MCFeed.swift */,
+				B990B3001F2CF70C003174CB /* MCFeedRepository.swift */,
+			);
+			name = Domain;
+			sourceTree = "<group>";
+		};
+		B990B2F61F2CF10E003174CB /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				B990B3031F2CF7AF003174CB /* MCFeedDataRepository.swift */,
+				B990B3061F2CFCD5003174CB /* MCFeedAPIService.swift */,
+				B990B3091F2CFD01003174CB /* MCFeedPersistence.swift */,
+			);
+			name = Repository;
+			sourceTree = "<group>";
+		};
+		B990B30E1F2D26D8003174CB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B990B30F1F2D28B9003174CB /* MCArticle.swift */,
+				B990B3121F2D28E9003174CB /* MCTopic.swift */,
+				B990B3151F2D291C003174CB /* MCMedia.swift */,
+				B990B3181F2D294C003174CB /* MCAttribution.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B990B2D01F2CEE3C003174CB /* MCFeed */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B990B2EE1F2CEE3D003174CB /* Build configuration list for PBXNativeTarget "MCFeed" */;
+			buildPhases = (
+				0A9ACC267E888899C3878FA4 /* [CP] Check Pods Manifest.lock */,
+				B990B2CD1F2CEE3C003174CB /* Sources */,
+				B990B2CE1F2CEE3C003174CB /* Frameworks */,
+				B990B2CF1F2CEE3C003174CB /* Resources */,
+				2299518C1F129ADCA063CFAB /* [CP] Embed Pods Frameworks */,
+				B1B7DA447D911C5EF7B1B967 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MCFeed;
+			productName = MCFeed;
+			productReference = B990B2D11F2CEE3C003174CB /* MCFeed.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B990B2C91F2CEE3C003174CB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Matias Roldan";
+				TargetAttributes = {
+					B990B2D01F2CEE3C003174CB = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = B990B2CC1F2CEE3C003174CB /* Build configuration list for PBXProject "MCFeed" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B990B2C81F2CEE3C003174CB;
+			productRefGroup = B990B2D21F2CEE3C003174CB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B990B2D01F2CEE3C003174CB /* MCFeed */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B990B2CF1F2CEE3C003174CB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B990B2DF1F2CEE3C003174CB /* LaunchScreen.storyboard in Resources */,
+				B990B2DC1F2CEE3C003174CB /* Assets.xcassets in Resources */,
+				B990B2DA1F2CEE3C003174CB /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0A9ACC267E888899C3878FA4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		2299518C1F129ADCA063CFAB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MCFeed/Pods-MCFeed-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B1B7DA447D911C5EF7B1B967 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MCFeed/Pods-MCFeed-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B990B2CD1F2CEE3C003174CB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B990B3071F2CFCD6003174CB /* MCFeedAPIService.swift in Sources */,
+				B990B31E1F2E3431003174CB /* MCArticleViewModel.swift in Sources */,
+				B990B30A1F2CFD01003174CB /* MCFeedPersistence.swift in Sources */,
+				B990B2FB1F2CF5E2003174CB /* MCFeedDomain.swift in Sources */,
+				B990B3011F2CF70C003174CB /* MCFeedRepository.swift in Sources */,
+				B990B2FE1F2CF5FC003174CB /* MCFeed.swift in Sources */,
+				B990B3101F2D28B9003174CB /* MCArticle.swift in Sources */,
+				B990B3041F2CF7AF003174CB /* MCFeedDataRepository.swift in Sources */,
+				B990B3161F2D291C003174CB /* MCMedia.swift in Sources */,
+				B990B31C1F2E2DF2003174CB /* MCArticleCell.swift in Sources */,
+				B990B3281F2EB317003174CB /* DismissalAnimator.swift in Sources */,
+				B990B3241F2EB15C003174CB /* TransitioningDelegate.swift in Sources */,
+				B990B3191F2D294C003174CB /* MCAttribution.swift in Sources */,
+				B990B3261F2EB19E003174CB /* PresentationAnimator.swift in Sources */,
+				B990B32C1F2ED232003174CB /* UIColor+Hex.swift in Sources */,
+				B990B2D51F2CEE3C003174CB /* AppDelegate.swift in Sources */,
+				B990B30D1F2D11AC003174CB /* MCFeedTableViewController.swift in Sources */,
+				B990B3201F2EA599003174CB /* MCArticleDetailViewController.swift in Sources */,
+				B990B3131F2D28E9003174CB /* MCTopic.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		B990B2D81F2CEE3C003174CB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B990B2D91F2CEE3C003174CB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B990B2DD1F2CEE3C003174CB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B990B2DE1F2CEE3C003174CB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B990B2EC1F2CEE3D003174CB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B990B2ED1F2CEE3D003174CB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B990B2EF1F2CEE3D003174CB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E149FD94E327B68D5407E6C6 /* Pods-MCFeed.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = MCFeed/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mc.mcfeed;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		B990B2F01F2CEE3D003174CB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4E8F489C89B4F9CDEB50A93A /* Pods-MCFeed.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = MCFeed/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mc.mcfeed;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B990B2CC1F2CEE3C003174CB /* Build configuration list for PBXProject "MCFeed" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B990B2EC1F2CEE3D003174CB /* Debug */,
+				B990B2ED1F2CEE3D003174CB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B990B2EE1F2CEE3D003174CB /* Build configuration list for PBXNativeTarget "MCFeed" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B990B2EF1F2CEE3D003174CB /* Debug */,
+				B990B2F01F2CEE3D003174CB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B990B2C91F2CEE3C003174CB /* Project object */;
+}
